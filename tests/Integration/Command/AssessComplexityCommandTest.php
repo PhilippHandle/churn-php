@@ -16,21 +16,28 @@ final class AssessComplexityCommandTest extends BaseTestCase
      */
     private $commandTester;
 
-    /** @return void */
+    /**
+     * Test setup
+     */
     #[\Override]
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $application = new Application('churn-php', 'test');
-        $application->add(AssessComplexityCommand::newInstance());
+        $method = \method_exists($application, 'addCommand')
+            ? 'addCommand'
+            : 'add';
+        $application->{$method}(AssessComplexityCommand::newInstance());
         $command = $application->find('assess-complexity');
         $this->commandTester = new CommandTester($command);
     }
 
-    /** @return void */
+    /**
+     * Test teardown
+     */
     #[\Override]
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 

@@ -16,9 +16,11 @@ final class FileHelperTest extends BaseTestCase
      */
     private static $filesToDelete = [];
 
-    /** @return void */
+    /**
+     * Test teardown
+     */
     #[\Override]
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 

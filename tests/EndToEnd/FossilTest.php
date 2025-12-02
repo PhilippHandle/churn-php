@@ -16,21 +16,28 @@ final class FossilTest extends BaseTestCase
      */
     private $commandTester;
 
-    /** @return void */
+    /**
+     * Test setup
+     */
     #[\Override]
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $application = new Application('churn-php', 'test');
-        $application->add(RunCommand::newInstance());
+        $method = \method_exists($application, 'addCommand')
+            ? 'addCommand'
+            : 'add';
+        $application->{$method}(RunCommand::newInstance());
         $command = $application->find('run');
         $this->commandTester = new CommandTester($command);
     }
 
-    /** @return void */
+    /**
+     * Test teardown
+     */
     #[\Override]
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 

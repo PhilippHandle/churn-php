@@ -15,9 +15,11 @@ final class CommitsSinceTest extends ValidatorBaseTestCase
      */
     private $validator;
 
-    /** @return void */
+    /**
+     * Test setup
+     */
     #[\Override]
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

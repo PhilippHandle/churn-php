@@ -43,16 +43,18 @@ abstract class ValidatorBaseTestCase extends BaseTestCase
      */
     abstract public static function provideInvalidValues(): iterable;
 
-    /** @return void */
+    /**
+     * Test setup
+     */
     #[\Override]
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->config = new EditableConfig();
     }
 
-        /**
+    /**
      * @test
      */
     public function it_returns_the_default_value(): void
