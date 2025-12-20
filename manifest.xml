@@ -6,7 +6,7 @@
 		<license type="MIT" url="https://github.com/bmitch/churn-php/blob/master/LICENSE.md"/>
 	</copyright>
 	<requires>
-		<php version="^7.1 || ^8.0">
+		<php version="^8.1">
 			<ext name="json"/>
 			<ext name="tokenizer"/>
 		</php>
