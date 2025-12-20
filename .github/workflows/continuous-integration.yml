@@ -287,7 +287,6 @@ jobs:
           - "7.3"
           - "7.4"
           - "8.0"
-          - "8.1.32"
 
     steps:
       - name: "Install PHP"
@@ -308,7 +307,6 @@ jobs:
 
       - name: Test churn.phar error message
         run: |
-          php -r "passthru('./churn.phar', \$code); if (\$code !== 1) exit('Invalid error code. Expected 1, got ' . \$code);"
           php -r "passthru('./churn.phar', \$code); if (\$code !== 1) exit('Invalid error code. Expected 1, got ' . \$code);" &> error
           echo "Error code is OK. Now testing error message..."
           grep 'The application requires the version ">=8.1.33" or greater' error
@@ -324,6 +322,10 @@ jobs:
     strategy:
       matrix:
         php-version:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+          - "8.4"
           - "8.5"
 
     steps:
