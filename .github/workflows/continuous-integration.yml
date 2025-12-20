@@ -252,9 +252,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.composercache.outputs.dir }}
-          key: composer-${{ runner.os }}-7.1-${{ hashFiles('composer.*') }}
+          key: composer-${{ runner.os }}-8.1-${{ hashFiles('composer.*') }}
           restore-keys: |
-            composer-${{ runner.os }}-7.1-
+            composer-${{ runner.os }}-8.1-
             composer-${{ runner.os }}-
             composer-
 
