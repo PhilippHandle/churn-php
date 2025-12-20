@@ -266,7 +266,7 @@ jobs:
       - name: "Test Version"
         run: |
           diff -u <(build/bin/churn -V) <(./churn.phar -V)
-          ./churn.phar --version | grep -E '^churn-php .+@[0-9a-z]{8}$'
+          ./churn.phar --version | grep -E '^churn-php .+@[0-9a-z]{7}$'
 
       - name: "Test Phar"
         run: diff -u <(build/bin/churn --format=csv | sort) <(./churn.phar --format=csv | sort)
