@@ -15,7 +15,7 @@ if (!version_compare(PHP_VERSION, PHP_VERSION, '=')) {
     die(1);
 }
 
-if (version_compare('8.1.33', PHP_VERSION, '<')) {
+if (version_compare('8.1.33', PHP_VERSION, '>')) {
     fwrite(
         STDERR,
         sprintf(
