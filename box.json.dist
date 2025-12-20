@@ -18,6 +18,9 @@
         {
             "name": "*.php",
             "in": "vendor"
+        },
+        {
+            "in": "vendor/symfony/console/Resources"
         }
     ],
    "output": "churn.phar"
