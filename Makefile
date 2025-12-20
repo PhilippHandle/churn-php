@@ -24,7 +24,7 @@ box:
 build:	## Build churn.phar
 build: box
 	scp -r src bin composer.json box.json.dist manifest.xml LICENSE.md build/
-	$(COMPOSER_BIN) config platform.php 8.2.24 --working-dir=build/
+	$(COMPOSER_BIN) config platform.php 7.1.3 --working-dir=build/
 	$(COMPOSER_BIN) update --no-dev --no-interaction --prefer-dist --working-dir=build/
 	CHURN_VERSION=$$( $(PHP_BIN) build/bin/churn --version --no-ansi | grep -Po '(?<= )[^@]+' ) ;\
 	sed -i -e "s@0.0.0-dev@$${CHURN_VERSION}@g" build/manifest.xml
